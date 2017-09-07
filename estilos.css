@@ -1,0 +1,111 @@
+.fondo {
+    padding-top: 25px;
+    background-color: black;
+    color: green;
+    text-align: center;
+    height: 100hv;
+}
+
+.separa {
+    width: 100%;
+    height: 30px;
+}
+
+.btnCss {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    color: green;
+    background: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btnCss:hover {
+    box-shadow: 0px 0px 10px green;
+}
+
+#reloj {
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.crono {
+    display: flex;
+    justify-content: center;
+}
+
+.contador {
+    font-size: 100px;
+}
+
+#bordeBarra {
+    margin: 0 auto;
+    border: 1px solid #004500;
+    width: 202px;
+    height: 27px;
+    display: flex;
+}
+
+#btnTexto {
+    color: green;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#btnTexto:hover {
+    text-decoration: underline;
+}
+
+#barraEstado1,
+#barraEstado2,
+#barraEstado3,
+#barraEstado4 {
+    width: 50px;
+    height: 25px;
+    background-color: #011A01;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+#btnAlarma {
+    width: 300px;
+    height: 50px;
+    color: green;
+    font-weight: bold;
+    background: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#alarma button:hover {
+    box-shadow: 0px 0px 20px #003E00;
+}
+
+#alarma {
+    display: none;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+#autor {
+    text-align: center;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* mov img tomato alarma */
