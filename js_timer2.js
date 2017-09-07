@@ -14,12 +14,12 @@ function iniciar() {
     var stop = false;
     var title = "Pomodoro Timer:";
     var options = { body: "Alarma disparada!" };
-
+    var fondo = "negro";
     var permiso = Notification.requestPermission().then(function(result) {
         console.log(result);
     });
 
-    console.log(permiso);
+
 
 
     function muestraEstado(dato) { // muestra en pantalla estado crono: trabajando, descansando o parado.
@@ -301,6 +301,15 @@ function iniciar() {
         }
     }
 
+    document.getElementById("fondo").addEventListener("click", function cambiaFondo() {
+        if (fondo == "negro") {
+            document.body.style.backgroundColor = "white";
+            fondo = "blanco";
+        } else {
+            document.body.style.backgroundColor = "black";
+            fondo = "negro";
+        }
+    });
 
 
 } // fin corchete funcion iniciar
