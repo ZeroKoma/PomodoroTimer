@@ -104,3 +104,19 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+#btnFondo {
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    color: green;
+    background: #000000;
+    border: 2px solid green;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#btnFondo:hover {
+    box-shadow: 0px 0px 20px #003E00;
+}

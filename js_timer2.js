@@ -301,7 +301,7 @@ function iniciar() {
         }
     }
 
-    document.getElementById("fondo").addEventListener("click", function cambiaFondo() {
+    document.getElementById("btnFondo").addEventListener("click", function cambiaFondo() {
         if (fondo == "negro") {
             document.body.style.backgroundColor = "white";
             fondo = "blanco";
