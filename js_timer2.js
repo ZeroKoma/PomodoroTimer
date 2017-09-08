@@ -42,11 +42,11 @@ function iniciar() {
         }
 
         if (datoSeg < 10) { datoSeg = "0" + datoSeg }
-        document.getElementById("segundos").innerHTML = ":" + datoSeg;
+        document.getElementById("segundos").innerHTML = datoSeg;
         document.getElementById("minutos").innerHTML = datoMin;
 
 
-        if (!stop) x = setTimeout(function() { crono(datoSeg, datoMin) }, 1000);
+        if (!stop) x = setTimeout(function() { crono(datoSeg, datoMin) }, 15);
     }
 
     function controlador(datoSeg, datoMin) {
@@ -63,10 +63,9 @@ function iniciar() {
                     estado = false;
                     estadoCrono = "Ciclo " + (ciclo + 1) + " - Fin trabajo.</br>Play para iniciar descanso";
                     muestraEstado(estadoCrono);
-                    document.getElementById("btnInicio").style.backgroundColor = "black";
-                    document.getElementById("btnPausa").style.backgroundColor = "black";
-                    document.getElementById("btnStop").style.backgroundColor = "#19261c";
-
+                    document.getElementById("btnInicio").style.border = "2px solid green";
+                    document.getElementById("btnPausa").style.border = "2px solid green";
+                    document.getElementById("btnStop").style.border = "4px solid green";
                     alarma();
                 }
 
@@ -82,9 +81,9 @@ function iniciar() {
                     segundos = 59;
                     estadoCrono = "Ciclo " + (ciclo) + " finalizado.<br> Play para iniciar ciclo:" + (ciclo + 1);
                     muestraEstado(estadoCrono);
-                    document.getElementById("btnInicio").style.backgroundColor = "black";
-                    document.getElementById("btnPausa").style.backgroundColor = "black";
-                    document.getElementById("btnStop").style.backgroundColor = "#19261c";
+                    document.getElementById("btnInicio").style.border = "2px solid green";
+                    document.getElementById("btnPausa").style.border = "2px solid green";
+                    document.getElementById("btnStop").style.border = "4px solid green";
 
                     alarma();
                 }
@@ -105,9 +104,9 @@ function iniciar() {
                     estadoCrono = "Ciclo: " + (ciclo + 1) + " - Descansando";
                     minutos = wrkPause;
                 }
-                document.getElementById("btnInicio").style.backgroundColor = "#152118";
-                document.getElementById("btnPausa").style.backgroundColor = "black";
-                document.getElementById("btnStop").style.backgroundColor = "black";
+                document.getElementById("btnInicio").style.border = "4px solid green";
+                document.getElementById("btnPausa").style.border = "2px solid green";
+                document.getElementById("btnStop").style.border = "2px solid green";
                 muestraEstado(estadoCrono);
                 prePintaCiclo(ciclo);
                 indicaCicloTxt(ciclo);
@@ -124,9 +123,9 @@ function iniciar() {
             clearTimeout(x);
             timer_is_on = 0;
             estadoCrono = estadoCrono + "<br>En Pausa";
-            document.getElementById("btnInicio").style.backgroundColor = "black";
-            document.getElementById("btnPausa").style.backgroundColor = "#19261c";
-            document.getElementById("btnStop").style.backgroundColor = "black";
+            document.getElementById("btnInicio").style.border = "2px solid green";
+            document.getElementById("btnPausa").style.border = "4px solid green";
+            document.getElementById("btnStop").style.border = "2px solid green";
             muestraEstado(estadoCrono);
             estadoPlay = true;
             estadoPause = false;
@@ -175,10 +174,10 @@ function iniciar() {
                     break;
             };
         } else {
-            document.getElementById("barraEstado1").style.background = "#011A01";
-            document.getElementById("barraEstado2").style.background = "#011A01";
-            document.getElementById("barraEstado3").style.background = "#011A01";
-            document.getElementById("barraEstado4").style.background = "#011A01";
+            document.getElementById("barraEstado1").style.background = "transparent";
+            document.getElementById("barraEstado2").style.background = "transparent";
+            document.getElementById("barraEstado3").style.background = "transparent";
+            document.getElementById("barraEstado4").style.background = "transparent";
         }
     }
 
@@ -188,23 +187,23 @@ function iniciar() {
         if (dato < 4) {
             switch (dato) {
                 case 0:
-                    document.getElementById("barraEstado1").style.background = "#004500";
+                    document.getElementById("barraEstado1").style.border = "2px solid green";
                     break;
                 case 1:
-                    document.getElementById("barraEstado2").style.background = "#004500";
+                    document.getElementById("barraEstado2").style.border = "2px solid green";
                     break;
                 case 2:
-                    document.getElementById("barraEstado3").style.background = "#004500";
+                    document.getElementById("barraEstado3").style.border = "2px solid green";
                     break;
                 case 3:
-                    document.getElementById("barraEstado4").style.background = "#004500";
+                    document.getElementById("barraEstado4").style.border = "2px solid green";
                     break;
             };
         } else {
-            document.getElementById("barraEstado1").style.background = "#011A01";
-            document.getElementById("barraEstado2").style.background = "#011A01";
-            document.getElementById("barraEstado3").style.background = "#011A01";
-            document.getElementById("barraEstado4").style.background = "#011A01";
+            document.getElementById("barraEstado1").style.border = "1px solid green";
+            document.getElementById("barraEstado2").style.border = "1px solid green";
+            document.getElementById("barraEstado3").style.border = "1px solid green";
+            document.getElementById("barraEstado4").style.border = "1px solid green";
         }
     }
 
@@ -226,14 +225,14 @@ function iniciar() {
         var estadoPause = false;
         var estadoStop = false;
         document.getElementById("minutos").innerHTML = "00";
-        document.getElementById("segundos").innerHTML = ":00";
-        document.getElementById("btnInicio").style.backgroundColor = "black";
-        document.getElementById("btnPausa").style.backgroundColor = "black";
-        document.getElementById("btnStop").style.backgroundColor = "#19261c";
-        document.getElementById("barraEstado1").style.background = "#011A01";
-        document.getElementById("barraEstado2").style.background = "#011A01";
-        document.getElementById("barraEstado3").style.background = "#011A01";
-        document.getElementById("barraEstado4").style.background = "#011A01";
+        document.getElementById("segundos").innerHTML = "00";
+        document.getElementById("btnInicio").style.border = "2px solid green";
+        document.getElementById("btnPausa").style.border = "2px solid green";
+        document.getElementById("btnStop").style.border = "4px solid green";
+        document.getElementById("barraEstado1").style.background = "#198A19";
+        document.getElementById("barraEstado2").style.background = "#198A19";
+        document.getElementById("barraEstado3").style.background = "#198A19";
+        document.getElementById("barraEstado4").style.background = "#198A19";
 
         pintaCiclo(0);
 
@@ -247,9 +246,9 @@ function iniciar() {
         stop = true;
         document.getElementById("minutos").innerHTML = "00";
         document.getElementById("segundos").innerHTML = ":00";
-        document.getElementById("btnInicio").style.backgroundColor = "black";
-        document.getElementById("btnPausa").style.backgroundColor = "black";
-        document.getElementById("btnStop").style.backgroundColor = "#19261c";
+        document.getElementById("btnInicio").style.border = "2px solid green";
+        document.getElementById("btnPausa").style.border = "2px solid green";
+        document.getElementById("btnStop").style.border = "4px solid green";
         document.getElementById("barraEstado4").style.background = "green";
         ciclo = 4;
         pintaCiclo(ciclo);
@@ -259,7 +258,9 @@ function iniciar() {
 
     function alarma() {
         document.getElementById("alarma").style.display = "block";
-
+        estadoPlay = true;
+        estadoPause = false;
+        estadoStop = true;
         var audio = document.getElementById("audio");
         audio.loop = true;
         audio.volume = 1;
@@ -304,10 +305,13 @@ function iniciar() {
     document.getElementById("btnFondo").addEventListener("click", function cambiaFondo() {
         if (fondo == "negro") {
             document.body.style.backgroundColor = "white";
+            document.getElementById("btnFondo").style.backgroundColor = "white";
             fondo = "blanco";
+
         } else {
             document.body.style.backgroundColor = "black";
             fondo = "negro";
+            document.getElementById("btnFondo").style.backgroundColor = "black";
         }
     });
 

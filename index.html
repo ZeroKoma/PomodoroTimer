@@ -8,72 +8,85 @@
     <link rel="stylesheet" href="estilos.css">
     <title>Pomodoro Timer</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body onload="iniciar()" class="fondo">
-    <header>
-        <h1>POMODORO <span><img id="tomatoImg" src="favicon.png" alt="pomodoro" width="40px" height="40px" style="margin-bottom: -8px;"></span> TIMER</h1>
-    </header>
+    <div class="container">
+        <div class="row">
+            <h1 id="cabecera">POMODORO <span><img id="tomatoImg" src="favicon.png" alt="pomodoro"></span> TIMER</h1>
+            <div class="separa"></div>
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 jumbo">
+                <div class="separa"></div>
+                <div class="crono ">
+                    <div class="contador" id="minutos">00</div>
+                    <div class="contador" id="dosPuntosContador">:</div>
+                    <div class="contador" id="segundos">00</div>
+                </div>
 
-    <div class="separa"></div>
 
-    <button class="btnCss" id="btnInicio">&#9658</button>
-    <button class="btnCss" id="btnPausa">&#9208</button>
-    <button class="btnCss" id="btnStop">&#9632</button>
+                <div class="separa"></div>
+                <button class="btnCss" id="btnInicio">&#9658</button>
+                <button class="btnCss" id="btnPausa">&#9208</button>
+                <button class="btnCss" id="btnStop">&#9632</button>
 
-    <div class="separa"></div>
+                <div class="separa"></div>
+                <h2 id="estadoCrono">Estado: </h2>
+            </div>
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+        </div>
+        <div id="alarma">
+            <button id="btnAlarma">&#9200;  Parar Alarma</button>
+        </div>
 
-    <h2 id="estadoCrono">Estado: </h2>
-    <div class="crono ">
-        <div class="contador" id="minutos">00</div>
-        <div class="contador" id="segundos">:00</div>
+        <div class="separa"></div>
+        <div class="row">
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 jumbo">
+                <h2 id="cicloPomodoro">Ciclo de 4 Pomodoros</h2>
+                <div id="bordeBarra">
+                    <div id="barraEstado1"></div>
+                    <div id="barraEstado2"></div>
+                    <div id="barraEstado3"></div>
+                    <div id="barraEstado4"></div>
+                </div>
+
+            </div>
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+        </div>
+        <div class="separa"></div>
+        <div class="row">
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 jumbo">
+                <h2>Hora actual:</h2>
+                <span id="reloj"></span>
+            </div>
+            <div class="separa"></div>
+            <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
+        </div>
+        <div class="separa"></div>
+
+        <div class="row">
+            <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="footer">
+                <button id="btnFondo">Cambiar Fondo</button>
+                <div class="separa"></div>
+                <a id="btnTexto" alt="Wikipedia" href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro" target="_blank">
+                    <p>Sobre la Técnica Pomodoro</p>
+                </a>
+                <p id="autor">Pablo / Borealos 2017 / v2.0</p>
+            </footer>
+        </div>
+        <audio id="audio">
+            <source src="campana.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio
+        </audio>
+
     </div>
-
-    <div id="alarma">
-        <button id="btnAlarma">&#9200;  Parar Alarma</button>
-    </div>
-
-    <div class="separa"></div>
-
-    <h2 id="cicloPomodoro">Ciclo de 4 Pomodoros</h2>
-    <div id="bordeBarra">
-        <div id="barraEstado1"></div>
-        <div id="barraEstado2"></div>
-        <div id="barraEstado3"></div>
-        <div id="barraEstado4"></div>
-    </div>
-
-    <div class="separa"></div>
-
-    <h2>Hora actual:</h2>
-    <span id="reloj"></span>
-
-    <div class="separa"></div>
-
-
-    <footer id="footer">
-        <button id="btnFondo">Cambiar Fondo</button>
-        <a id="btnTexto" alt="Wikipedia" href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro" target="_blank">
-            <p>Sobre la Técnica Pomodoro</p>
-        </a>
-        <p id="autor">Pablo / Borealos 2017 / v2.0</p>
-    </footer>
-
-    <audio id="audio">
-        <source src="campana.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio
-    </audio>
-
-
-
-
-
-
-
-
-
-    <script src="js_timer2.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js_timer2.js"></script>
 </body>
 
 </html>
